@@ -1,0 +1,71 @@
+.sym-sidenav {
+  grid-area: sidebar;
+  display: flex;
+  padding: 6rem 1.5rem;
+  color: #ffffff;
+}
+
+.sym-sidenav-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.sym-sidenav-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2f2f2f;
+}
+
+.sym-sidenav-body {
+  padding: 3rem 0;
+}
+
+.sym-sidenav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sym-sidenav-menu .sym-sidenav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sym-sidenav-menu .sym-sidenav-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+  flex-grow: 1;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: #8e8e8e;
+}
+
+.sym-sidenav-menu .sym-sidenav-item:hover a,
+.sym-sidenav-menu .sym-sidenav-item.is-active a {
+  padding: 0.5rem 1rem;
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
+.sym-sidenav-menu .sym-sidenav-item.is-active a:hover {
+  filter: brightness(1.1);
+}
+
+.sym-sidenav-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid #2f2f2f;
+}
+
+.sym-sidenav-footer span {
+  font-size: 0.75rem;
+}
