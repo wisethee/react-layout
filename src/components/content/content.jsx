@@ -1,9 +1,9 @@
 import "./content.css";
 
-const SymContent = () => {
+const SymContent = ({ selectedItem }) => {
   return (
     <div className="sym-content">
-      <div className="sym-content-wrapper">content</div>
+      <div className="sym-content-wrapper">{selectedItem}</div>
     </div>
   );
 };

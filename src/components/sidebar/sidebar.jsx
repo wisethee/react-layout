@@ -1,8 +1,9 @@
-import "./navigation.css";
+import "./sidebar.css";
 
 import SymLogo from "../logo/logo";
+import SymNav from "../nav/nav";
 
-const SymNavigation = ({ children }) => {
+const SymSidebar = ({ navItems, selectedItem, onMenuItemClick }) => {
   return (
     <div className="sym-navigation">
       <div className="sym-navigation-wrapper">
@@ -12,9 +13,11 @@ const SymNavigation = ({ children }) => {
             <h3>Symmetry Settings</h3>
           </div>
 
-          <nav className="sym-navigation-body">
-            <ul className="sym-navigation-menu">{children}</ul>
-          </nav>
+          <SymNav
+            navItems={navItems}
+            selectedItem={selectedItem}
+            onItemClick={onMenuItemClick}
+          />
         </div>
 
         <div className="sym-navigation-footer">
@@ -25,4 +28,4 @@ const SymNavigation = ({ children }) => {
   );
 };
 
-export default SymNavigation;
+export default SymSidebar;

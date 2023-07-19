@@ -1,12 +1,11 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import SymContainer from "./components/container/container";
 import SymContent from "./components/content/content";
-import SymNavigation from "./components/navigation/navigation";
+import SymSidebar from "./components/sidebar/sidebar";
 
 import { typography, colors, layout, spacing } from "./components/icons/icons";
-import SymNavigationItem from "./components/navigation-item/navigation-item";
 
-const navigationItems = [
+const navItems = [
   { id: 1, label: "Typography", path: typography, link: "/" },
   { id: 2, label: "Colors", path: colors, link: "/" },
   { id: 3, label: "Layout", path: layout, link: "/" },
@@ -14,23 +13,21 @@ const navigationItems = [
 ];
 
 const App = () => {
+  const [selectedItem, setSelectedItem] = useState("1");
+
+  const handleMenuItemClick = (itemId) => {
+    setSelectedItem(itemId);
+  };
+
   return (
     <Fragment>
       <SymContainer>
-        <SymNavigation>
-          {navigationItems.map((item) => {
-            const { id, label, path, link } = item;
-            return (
-              <SymNavigationItem
-                key={id}
-                label={label}
-                path={path}
-                link={link}
-              />
-            );
-          })}
-        </SymNavigation>
-        <SymContent />
+        <SymSidebar
+          navItems={navItems}
+          selectedItem={selectedItem}
+          onMenuItemClick={handleMenuItemClick}
+        ></SymSidebar>
+        <SymContent selectedItem={selectedItem} />
       </SymContainer>
     </Fragment>
   );
