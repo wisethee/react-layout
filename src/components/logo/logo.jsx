@@ -1,4 +1,4 @@
-import "./logo.component.css";
+import "./logo.css";
 
 const SymLogo = () => (
   <svg
