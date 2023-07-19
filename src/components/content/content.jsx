@@ -1,4 +1,4 @@
-import "./content.component.css";
+import "./content.css";
 
 const SymContent = () => {
   return (
